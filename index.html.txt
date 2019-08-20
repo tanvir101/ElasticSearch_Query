@@ -1,0 +1,55 @@
+##  allposts.html
+<!DOCTYPE html>
+ <html lang="en">
+ <head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style>*{margin:0;padding:0;}
+.bg{
+ width: 100%;
+ background-color:#dcdcdc;
+}
+ 
+table {
+border-spacing: 0;
+border-collapse: separate;
+}
+.thead td{
+  font-weight: bold;
+  color:blue;
+}
+.red
+{
+  color:red;
+  font-weight: bold;
+}
+.green {
+  color:green;
+  font-weight: bold;
+}
+.logo{
+  height: 70px;
+  width: 60px;
+}
+ 
+.foot{
+    border-top: 1px solid black;
+}
+</style></head>
+<body >
+{% if posts %}
+<div id="admit"> 
+    <table class="bg"> 
+        <tr> 
+            <td class="righthead"> 
+                <img class="logo" src="./media/harun.png"> 
+                <h1>Harun Or Rashid</h1>            
+             </td>
+        </tr>
+     </table>
+     <table class="footer"> 
+         <td><strong>@Developed by Harun</strong></td>        
+         </tr>
+      </table> 
+    {% endif %}
+    </body>
+</html>

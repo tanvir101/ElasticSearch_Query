@@ -1,0 +1,92 @@
+GET /monsters/_search
+{
+   "query":{
+      "match" : {
+         "Name":"Metapod"
+      }
+   }
+}
+
+
+GET /monsters/_search
+{
+   "aggs":{
+      "sum_speed":{"sum":{"field":"Sp_Def"}}
+   }
+}
+
+
+GET /monsters/_search
+{
+   "query":{
+      "range":{
+         "Number":{
+            "lt":5
+         }
+      }
+   }
+}
+
+
+GET /monsters/_search
+{
+  "query": {
+      "match_all": {}
+  },
+  "size": 0,
+  "aggs": {
+    "Total": {
+      "sum": {
+        "field": "Speed"
+      }
+    }
+  }
+    }
+
+GET monsters_new/_search
+{  "_source": "Name", 
+   "query":{
+      "match_all": {
+    }
+  }
+}
+
+
+GET monsters_new/_search
+{
+  "query": { 
+    "bool": { 
+      "must": [
+        { "match": { "Name":  "Venusaur"        }}, 
+        { "match": { "Speed": "80" }}  ]
+    }
+  }
+}
+
+
+GET monsters_new/_search
+{
+    "query": {
+       "fuzzy" : { "Name": "vanusur" }
+    }
+}
+
+
+bucket aggregation:
+
+GET /monsters_new/_search
+{
+  "query": {
+    "match_all": {
+     
+    }
+  },
+  "size": 0,
+  "aggs": {
+    "Generation": {
+      "terms": {
+        "field": "Generation"
+      }
+    }
+  }
+}
